@@ -65,7 +65,7 @@
                     </div>
                     <div class="contact-item">
                         <h4><i class="fab fa-linkedin"></i> LinkedIn:</h4>
-                        <p><a href="https://linkedin.com/in/tarjamat-llc-6a461042" target="_blank">linkedin.com/in/tarjamat-llc-6a461042</a></p>
+                        <p><a href="https://www.linkedin.com/in/tarjamatllc/" target="_blank">linkedin.com/in/tarjamatllc/</a></p>
                     </div>
                 </div>
             </div>
