@@ -25,3 +25,4 @@ Route::get('/contact', [GenericPageController::class, 'contact'])->name('website
 Route::get('/services', [GenericPageController::class, 'services'])->name('website.services');
 Route::get('/about', [GenericPageController::class, 'about'])->name('website.about');
 Route::get('/', [GenericPageController::class, 'index'])->name('website.index');
+Route::post('/contact', [GenericPageController::class, 'sendContactEmail'])->name('contact.send');

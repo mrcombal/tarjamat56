@@ -22,10 +22,11 @@
                 </h2>
                 <p style="font-weight: 600;">Ready to take the next step?</p>
                 <p>Whether you need a quote, have a question, or want to join our team, simply fill out<br>the form and we’ll be in touch shortly.</p>
-
-                <form class="mt-4">
+                <form action="{{ route('contact.send') }}" method="POST">
+                    @csrf
+                    
                     <div class="form-group">
-                        <select class="form-control" aria-label="How can we assist?">
+                        <select class="form-control" name="assist_type" aria-label="How can we assist?" required>
                             <option selected disabled>How can we assist?</option>
                             <option value="1">Get a Quote</option>
                             <option value="2">Join the Team</option>
@@ -34,18 +35,19 @@
                     </div>
                     <div class="form-group row mt-4">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Name *" required>
+                            <input type="text" class="form-control" name="name" placeholder="Name *" required>
                         </div>
                         <div class="col">
-                            <input type="email" class="form-control" placeholder="Email address *" required>
+                            <input type="email" class="form-control" name="email" placeholder="Email address *" required>
                         </div>
                     </div>
                     <div class="form-group my-4">
-                        <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                        <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                     </div>
                     <p class="mb-0">Once you’ve filled out the form, hit send, and we’ll take care of the rest.</p>
                     <button type="submit" class="btn btn-primary mt-4">Send now</button>
                 </form>
+                
 
             </div>
             <div class="col-md-4 offset-md-1">
