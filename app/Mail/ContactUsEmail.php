@@ -32,7 +32,7 @@ class ContactUsEmail extends Mailable
     {
         return $this->subject('Email from Tarjamat Contact Us')
             ->from(env('MAIL_FROM_ADDRESS', 'info@arabictarjamat.com'), env('MAIL_FROM_NAME', 'Tarjamat'))
-            ->view('landing.emails.contact_us')
+            ->view('emails.contact_us')
             ->with([
                 'data' => $this->data
             ]);

@@ -26,11 +26,12 @@ class GenericPageController extends Controller
 
     public function sendContactEmail(Request $request)
     {
+        // dd($request->all());
         $validatedInputs = $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|email',
-            'phone' => 'required|numeric',
-            'subject' => 'required',
+            // 'phone' => 'required|numeric',
+            // 'subject' => 'required',
             'message' => 'required',
             'assist_type' => 'required|in:1,2,3',
         ]);
@@ -42,9 +43,9 @@ class GenericPageController extends Controller
         } elseif ($validatedInputs['assist_type'] == 2) {
             $recipient = 'applications@arabictarjamat.com';
         }
-    
+
         // Send the email
-        Mail::to($recipient)->queue(new ContactUsEmail($validatedInputs));
+        Mail::to($recipient)->send(new ContactUsEmail($validatedInputs));
     
         return redirect(route('website.index'))->with('success', 'msg_sent');
     }

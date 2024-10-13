@@ -76,12 +76,12 @@
     </style>
 </head>
 
-<body style="margin: 0; padding: 0; width: 100%; word-break: break-word; -webkit-font-smoothing: antialiased; --bg-opacity: 1; background-color: #eceff1; background-color: rgba(236, 239, 241, var(--bg-opacity));">
+<body style="margin: 0; padding: 0; width: 100%; word-break: break-word; -webkit-font-smoothing: antialiased; --bg-opacity: 1; background-color: #eceff1; background-color: #5C7A30;">
 <div style="display: none;">Email from Tarjamat Contact Us</div>
 <div role="article" aria-roledescription="Tarjamat" aria-label="Tarjamat" lang="en">
     <table style="font-family: Montserrat, -apple-system, 'Segoe UI', sans-serif; width: 100%;" role="presentation">
         <tr>
-            <td align="center" style="--bg-opacity: 1; background-color: #eceff1; background-color: rgba(236, 239, 241, var(--bg-opacity)); font-family: Montserrat, -apple-system, 'Segoe UI', sans-serif;" bgcolor="rgba(236, 239, 241, var(--bg-opacity))">
+            <td align="center" style="--bg-opacity: 1; background-color: #eceff1; background-color:#5C7A30; font-family: Montserrat, -apple-system, 'Segoe UI', sans-serif;" bgcolor="#5C7A30">
                 <table class="sm-w-full" style="font-family: 'Montserrat',Arial,sans-serif; width: 600px;"  role="presentation">
                     <tr>
                         <td class="sm-py-32 sm-px-24" style="font-family: Montserrat, -apple-system, 'Segoe UI', sans-serif; padding: 48px; text-align: center;" align="center">
@@ -106,14 +106,6 @@
                                             <tr>
                                                 <td><strong>Email:</strong></td>
                                                 <td>{{ $data['email'] }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td><strong>Phone:</strong></td>
-                                                <td>{{ $data['phone'] }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td><strong>Subject:</strong></td>
-                                                <td>{{ $data['subject'] }}</td>
                                             </tr>
                                             <tr>
                                                 <td><strong>Assist Type:</strong></td>
