@@ -70,7 +70,6 @@ main p {
 .hero-section {
     background: url('../images/green-poly-bg.png') center center no-repeat;
     background-size: cover;
-    text-align: justify;
 }
 
 .hero-section .container {
