@@ -73,7 +73,7 @@
                             <img src="{{asset('images/icons/translation.svg')}}">
                         </div>
                         <h3 class="service-title">Professional<br>Translation & Editing</h3>
-                        <p class="service-description">Providing accurate translations and thorough editing to ensure clarity and consistency in every project.</p>
+                        <p class="service-description text-center">Providing accurate translations and thorough editing to ensure clarity and consistency in every project.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -82,7 +82,7 @@
                             <img src="{{asset('images/icons/subtitling.svg')}}">
                         </div>
                         <h3 class="service-title">Subtitling &<br>Transcription Services</h3>
-                        <p class="service-description">Delivering precise subtitling for video content and accurate transcription for audio and video materials.</p>
+                        <p class="service-description text-center">Delivering precise subtitling for video content and accurate transcription for audio and video materials.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -91,7 +91,7 @@
                             <img src="{{asset('images/icons/dtp.svg')}}">
                         </div>
                         <h3 class="service-title">DTP &<br>Interpretation</h3>
-                        <p class="service-description">Offering expert interpretation and multilingual desktop publishing to support global communication needs.</p>
+                        <p class="service-description text-center">Offering expert interpretation and multilingual desktop publishing to support global communication needs.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -100,7 +100,7 @@
                             <img src="{{asset('images/icons/mtp.svg')}}">
                         </div>
                         <h3 class="service-title">Machine Translation &<br>Post-Editing Solutions</h3>
-                        <p class="service-description">Combining advanced machine translation with expert post-editing for fast and accurate results.</p>
+                        <p class="service-description text-center">Combining advanced machine translation with expert post-editing for fast and accurate results.</p>
                     </div>
                 </div>
             </div>
