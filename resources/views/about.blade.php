@@ -19,7 +19,7 @@
         <h2 style="font-size: 24px; color: #362E2E; font-weight: 400;">The Visionary Behind It All:</h2>
         <h3 class="text-custom fw-med" style="margin-bottom: 20px; font-size: 40px;">Prof. Louay Abdulla</h3>
         <div class="row align-items-start">
-            <div class="col-md-9" style="line-height: 36px; font-size: 18px; color: #666666; text-align: justify;">
+            <div class="col-md-9" style="line-height: 36px; font-size: 18px; color: #666666;">
                 <p>Prof. Louay Abdulla, the visionary founder of Tarjamat LLC, was a respected linguist, educator, and cultural expert who dedicated his life to fostering understanding between the Arab world and the West.</p>
                 <p>Renowned for his expertise in Arabic language and culture, Prof. Abdulla held various academic and government positions throughout his career. He taught Arabic at prestigious institutions such as New York University and Kent State University, where he was recognized for his exceptional teaching abilities and commitment to student success.</p>
                 <p>His professional experience extended beyond academia, as he served as the Head of Information Section at the Qatar Ministry of Foreign Affairs. In this role, he oversaw translations, conducted cultural training programs, and played a key part in developing the Ministry's online presence.</p>
@@ -36,7 +36,7 @@
     <section class="container my-5">
         <h2 style="font-size: 24px; color: #362E2E; font-weight: 400;">How Tarjamat Was Born:</h2>
         <h3 class="text-custom fw-med" style="margin-bottom: 20px; font-size: 40px;">A Vision Rooted in Equality and Excellence</h3>
-        <p style="line-height: 36px; font-size: 18px; color: #666666; text-align: justify;">Tarjamat LLC was established in 2007 by Prof. Louay Abdulla, a certified ATA EN <> AR translator. Despite sadly passing away in 2021, his vision for the company continues to thrive. Driven by a belief in the underrepresentation and underpayment of women in the translation industry, Prof. Abdulla founded Tarjamat with a strong commitment to gender equality. His legacy lives on through our dedicated team, which is predominantly composed of skilled female managers and linguists.</p>
+        <p style="line-height: 36px; font-size: 18px; color: #666666;">Tarjamat LLC was established in 2007 by Prof. Louay Abdulla, a certified ATA EN <> AR translator. Despite sadly passing away in 2021, his vision for the company continues to thrive. Driven by a belief in the underrepresentation and underpayment of women in the translation industry, Prof. Abdulla founded Tarjamat with a strong commitment to gender equality. His legacy lives on through our dedicated team, which is predominantly composed of skilled female managers and linguists.</p>
     </section>
 
 
@@ -45,11 +45,11 @@
             <div class="row">
                 <div class="col-md-7">
                     <h3 style="font-weight: 100; font-size: 26px; margin-bottom: 30px;">The purpose<span style="display: block; font-size: 32px;">behind <span class="fw-bold">our words</span></span></h3>
-                    <p style="text-align: justify; font-size: 18px; line-height: 36px;">Our goal is to break down language barriers, foster social equality, and empower marginalized communities by providing high-quality translation services, ensuring everyone has access to vital information and full participation in society.</p>
+                    <p style="font-size: 18px; line-height: 36px;">Our goal is to break down language barriers, foster social equality, and empower marginalized communities by providing high-quality translation services, ensuring everyone has access to vital information and full participation in society.</p>
                 </div>
                 <div class="col-md-4 offset-md-1">
                     <h3 style="font-weight: 100; font-size: 26px; margin-bottom: 30px;">The way<span style="display: block; font-size: 32px;">we're <span class="fw-bold">headed</span></span></h3>
-                    <p style="text-align: justify; font-size: 18px; line-height: 36px;">Bridging languages and cultures, creating global opportunities for women and honoring our founder’s legacy with every translation.</p>
+                    <p style="font-size: 18px; line-height: 36px;">Bridging languages and cultures, creating global opportunities for women and honoring our founder’s legacy with every translation.</p>
                 </div>
             </div>
         </div>

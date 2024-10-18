@@ -15,6 +15,10 @@ main {
     border-bottom: 1px solid #eee;
 }
 
+main p {
+	text-align: left;
+}
+
 .navbar {
     padding: 0;
 }
