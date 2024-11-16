@@ -24,7 +24,7 @@
             <div class="col-md-3">
                 <div class="fact">
                     <div class="circle">
-                        <div class="number">13M+</div>
+                        <div class="number"><span id="fact-words">>13</span>M+</div>
                         <div class="word">words</div>
                     </div>
                     <div class="description">Our professionals translated more than 13 million words</div>
@@ -33,7 +33,7 @@
             <div class="col-md-3">
                 <div class="fact">
                     <div class="circle">
-                        <div class="number">17+</div>
+                        <div class="number"><span id="fact-years">17</span>+</div>
                         <div class="word">years</div>
                     </div>
                     <div class="description">Tarjamat has been in business for more than 17 years</div>
@@ -42,7 +42,7 @@
             <div class="col-md-3">
                 <div class="fact">
                     <div class="circle">
-                        <div class="number">4+</div>
+                        <div class="number"><span id="fact-languages">4</span>+</div>
                         <div class="word">languages</div>
                     </div>
                     <div class="description">Providing expert translations in over four languages</div>
@@ -51,7 +51,7 @@
             <div class="col-md-3">
                 <div class="fact">
                     <div class="circle">
-                        <div class="number">50+</div>
+                        <div class="number"><span id="fact-clients">50</span>+</div>
                         <div class="word">clients</div>
                     </div>
                     <div class="description">More than 50 satisfied clients from different countries</div>

@@ -61,5 +61,18 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script type="module">
+    import { CountUp } from 'https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js';
+    const counter1 = new CountUp('fact-words', 13);
+    const counter2 = new CountUp('fact-years', 17);
+    const counter3 = new CountUp('fact-languages', 4);
+    const counter4 = new CountUp('fact-clients', 50);
+    counter1.start();
+    counter2.start();
+    counter3.start();
+    counter4.start();
+</script>
 </body>
 </html>
