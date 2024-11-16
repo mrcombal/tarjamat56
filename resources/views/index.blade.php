@@ -24,7 +24,7 @@
             <div class="col-md-3">
                 <div class="fact">
                     <div class="circle">
-                        <div class="number"><span id="fact-words">>13</span>M+</div>
+                        <div class="number"><span id="fact-words">13</span>M+</div>
                         <div class="word">words</div>
                     </div>
                     <div class="description">Our professionals translated more than 13 million words</div>
