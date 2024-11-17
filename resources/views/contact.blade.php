@@ -20,6 +20,11 @@
                 <h2 style="font-size: 32px; color: #362E2E; margin-bottom: 20px; font-weight: 500;">
                     Send us an <span class="text-custom fw-bold">email</span>
                 </h2>
+                @if(session('success'))
+    				<div class="alert alert-success">
+        				Thank you for your message. We will get back to you as soon as possible.
+				    </div>
+				@endif
                 <p style="font-weight: 600;">Ready to take the next step?</p>
                 <p>Whether you need a quote, have a question, or want to join our team, simply fill out<br>the form and we’ll be in touch shortly.</p>
                 <form action="{{ route('contact.send') }}" method="POST">

@@ -62,12 +62,12 @@ class GenericPageController extends Controller {
        
         try {
             $status = $this->sendGridService->sendEmail($to, $subject, $content);
-            return response()->json(['message' => 'Email sent successfully!', 'status' => $status]);
+            return redirect()->back()->with('success', 'msg_sent');
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
     
-        return redirect(route('website.index'))->with('success', 'msg_sent');
+        return redirect()->back()->with('success', 'msg_sent');
     }
     
     
