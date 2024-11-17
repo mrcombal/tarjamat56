@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactUsEmail;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
+use App\Services\SendGridMailService;
 
-class GenericPageController extends Controller
-{
+
+class GenericPageController extends Controller {
+
+    protected $sendGridService;
+
+    public function __construct(SendGridMailService $sendGridService) {
+        $this->sendGridService = $sendGridService;
+    }
+    
     public function index() {
         return view('index');
     }
@@ -45,7 +52,20 @@ class GenericPageController extends Controller
         }
 
         // Send the email
-        Mail::to($recipient)->send(new ContactUsEmail($validatedInputs));
+       // Mail::to($recipient)->send(new ContactUsEmail($validatedInputs));
+       
+       $to = $recipient;
+       $subject = 'New email from Tarjamat website';
+       $data = $validatedInputs;
+		$content = view('emails.contact_us', compact('data'))->render();
+
+       
+        try {
+            $status = $this->sendGridService->sendEmail($to, $subject, $content);
+            return response()->json(['message' => 'Email sent successfully!', 'status' => $status]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     
         return redirect(route('website.index'))->with('success', 'msg_sent');
     }
