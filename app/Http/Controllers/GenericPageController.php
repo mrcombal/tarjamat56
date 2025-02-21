@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\GenericContent;
 use App\Mail\ContactUsEmail;
 use Illuminate\Http\Request;
 use App\Services\SendGridMailService;
@@ -14,9 +15,13 @@ class GenericPageController extends Controller {
     public function __construct(SendGridMailService $sendGridService) {
         $this->sendGridService = $sendGridService;
     }
-    
+
     public function index() {
-        return view('index');
+
+        $contents = GenericContent::all();
+        $contentsArray = $contents->pluck('value', 'key')->toArray();
+
+        return view('index', compact('contentsArray'));
     }
 
     public function about() {
@@ -42,7 +47,7 @@ class GenericPageController extends Controller {
             'message' => 'required',
             'assist_type' => 'required|in:1,2,3',
         ]);
-    
+
         // Determine the recipient based on assist_type
         $recipient = 'info@arabictarjamat.com'; // Default recipient
         if ($validatedInputs['assist_type'] == 1) {
@@ -53,22 +58,22 @@ class GenericPageController extends Controller {
 
         // Send the email
        // Mail::to($recipient)->send(new ContactUsEmail($validatedInputs));
-       
+
        $to = $recipient;
        $subject = 'New email from Tarjamat website';
        $data = $validatedInputs;
 		$content = view('emails.contact_us', compact('data'))->render();
 
-       
+
         try {
             $status = $this->sendGridService->sendEmail($to, $subject, $content);
             return redirect()->back()->with('success', 'msg_sent');
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
-    
+
         return redirect()->back()->with('success', 'msg_sent');
     }
-    
-    
+
+
 }

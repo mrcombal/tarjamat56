@@ -1,7 +1,7 @@
 @extends('admin.master')
 
-@section('title', 'HRS')
-@section('title2', 'Hydra Recruiting System')
+@section('title', 'Tarjamat')
+@section('title2', 'Tarjamat Admin Panel')
 
 @section('style')
     <link rel="stylesheet" type="text/css" href="{{asset('plugins/toastr/toastr.min.css')}}">

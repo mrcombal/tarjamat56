@@ -24,10 +24,10 @@
             <div class="col-md-3">
                 <div class="fact">
                     <div class="circle">
-                        <div class="number"><span id="fact-words">13</span>M+</div>
+                        <div class="number"><span id="fact-words">{{ $contentsArray['counter_words'] ?? 'N/A' }}</span>M+</div>
                         <div class="word">words</div>
                     </div>
-                    <div class="description">Our professionals translated more than 13 million words</div>
+                    <div class="description">{{ $contentsArray['counter_words_text'] ?? 'N/A' }}</div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -36,7 +36,7 @@
                         <div class="number"><span id="fact-years">17</span>+</div>
                         <div class="word">years</div>
                     </div>
-                    <div class="description">Tarjamat has been in business for more than 17 years</div>
+                    <div class="description">{{ $contentsArray['counter_years_text'] ?? 'N/A' }}</div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -45,7 +45,7 @@
                         <div class="number"><span id="fact-languages">4</span>+</div>
                         <div class="word">languages</div>
                     </div>
-                    <div class="description">Providing expert translations in over four languages</div>
+                    <div class="description">{{ $contentsArray['counter_languages_text'] ?? 'N/A' }}</div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -54,7 +54,7 @@
                         <div class="number"><span id="fact-clients">50</span>+</div>
                         <div class="word">clients</div>
                     </div>
-                    <div class="description">More than 50 satisfied clients from different countries</div>
+                    <div class="description">{{ $contentsArray['counter_clients_text'] ?? 'N/A' }}</div>
                 </div>
             </div>
         </div>
@@ -107,4 +107,18 @@
             <a href="{{route('website.services')}}" class="btn">Explore our services in details <i class="fa fa-chevron-right" style="padding-left:20px;"></i></a>
         </div>
     </section>
+@endsection
+
+@section('scripts')
+    <script type="module">
+        import { CountUp } from 'https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js';
+        const counter1 = new CountUp('fact-words', {{ $contentsArray['counter_words'] ?? 'N/A' }});
+        const counter2 = new CountUp('fact-years', {{ $contentsArray['counter_years'] ?? 'N/A' }});
+        const counter3 = new CountUp('fact-languages', {{ $contentsArray['counter_languages'] ?? 'N/A' }});
+        const counter4 = new CountUp('fact-clients', {{ $contentsArray['counter_clients'] ?? 'N/A' }});
+        counter1.start();
+        counter2.start();
+        counter3.start();
+        counter4.start();
+    </script>
 @endsection

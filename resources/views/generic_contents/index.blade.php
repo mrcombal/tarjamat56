@@ -25,7 +25,7 @@
                     <tr>
                         <td>{{ $content->id }}</td>
                         <td>{{ $content->key }}</td>
-                        <td>{{ Str::limit($content->value, 50) }}</td> <!-- Truncate long values -->
+                        <td>{{ $content->value }}</td> <!-- Truncate long values -->
                         <td>
                             <a href="{{ route('generic-content.show', $content->id) }}" class="btn btn-info btn-sm">Show</a>
                             <a href="{{ route('generic-content.edit', $content->id) }}" class="btn btn-warning btn-sm">Edit</a>

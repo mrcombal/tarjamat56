@@ -1,16 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\GenericContent;
 use Illuminate\Http\Request;
+use App\GenericContent;
 
 class GenericContentController extends Controller
 {
     public function index()
     {
+
         $contents = GenericContent::all();
         return view('generic_contents.index', compact('contents'));
+
     }
 
     public function create()

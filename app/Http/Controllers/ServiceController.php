@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Service;
 
 class ServiceController extends Controller
 {
@@ -63,7 +62,7 @@ class ServiceController extends Controller
         return view('services.edit', compact('service'));
     }
 
- 
+
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
@@ -73,9 +72,9 @@ class ServiceController extends Controller
             'icon' => 'nullable|file|mimes:jpeg,png,jpg,gif,svg|max:2048', // Update file validation
             'color' => 'required|string|max:7',
         ]);
-    
+
         $service = Service::find($id);
-    
+
         // Handle file upload
         if ($request->hasFile('icon')) {
             // Delete the old icon if exists
@@ -86,24 +85,24 @@ class ServiceController extends Controller
             $iconPath = $request->file('icon')->storeAs('icons', $originalFileName, 'public');
             $validated['icon'] = $iconPath;
         }
-    
+
         $service->update($validated);
-    
+
         return redirect()->route('services.index')->with('success', 'Service updated successfully');
     }
-    
+
 
     public function destroy($id)
     {
         $service = Service::find($id);
-    
+
         // Delete the associated icon file if it exists
         if ($service->icon) {
             Storage::delete('public/' . $service->icon);
         }
-    
+
         $service->delete();
         return redirect()->route('services.index')->with('success', 'Service deleted successfully');
     }
-    
+
 }
