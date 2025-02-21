@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GenericPageController;
+use App\Http\Controllers\AdminController;
 
 Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
 
