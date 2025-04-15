@@ -17,6 +17,7 @@
                     <th>ID</th>
                     <th>Key</th>
                     <th>Value</th>
+                    <th>Arabic Value</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -26,6 +27,7 @@
                         <td>{{ $content->id }}</td>
                         <td>{{ $content->key }}</td>
                         <td>{{ $content->value }}</td> <!-- Truncate long values -->
+                        <td>{{ $content->value_ar }}</td> <!-- Truncate long values -->
                         <td>
                             <a href="{{ route('generic-content.show', $content->id) }}" class="btn btn-info btn-sm">Show</a>
                             <a href="{{ route('generic-content.edit', $content->id) }}" class="btn btn-warning btn-sm">Edit</a>

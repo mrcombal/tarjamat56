@@ -19,7 +19,7 @@ class GenericPageController extends Controller {
     public function index() {
 
         $contents = GenericContent::all();
-        $contentsArray = $contents->pluck('value', 'key')->toArray();
+        $contentsArray = $contents->pluck('value', 'value_ar', 'key')->toArray();
 
         return view('index', compact('contentsArray'));
     }

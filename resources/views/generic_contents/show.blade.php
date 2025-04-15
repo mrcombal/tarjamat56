@@ -10,6 +10,9 @@
         <div class="mb-3">
             <strong>Value:</strong> {{ $content->value }}
         </div>
+        <div class="mb-3">
+            <strong>Arabic Value:</strong> {{ $content->value_ar }}
+        </div>
 
         <a href="{{ route('generic-content.index') }}" class="btn btn-secondary">Back to list</a>
     </div>

@@ -18,6 +18,11 @@
                 <textarea class="form-control" id="value" name="value" rows="5" required>{{ old('value', $content->value) }}</textarea>
             </div>
 
+            <div class="form-group">
+                <label for="value">Arabic Value</label>
+                <textarea class="form-control" id="value_ar" name="value_ar" rows="5" required>{{ old('value_ar', $content->value_ar) }}</textarea>
+            </div>
+
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>

@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class GenericContent extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['key', 'value'];
+    protected $fillable = ['key', 'value', 'value_ar'];
 }
