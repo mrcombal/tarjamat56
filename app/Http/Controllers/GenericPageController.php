@@ -19,21 +19,28 @@ class GenericPageController extends Controller {
     public function index() {
 
         $contents = GenericContent::all();
-        $contentsArray = $contents->pluck('value', 'value_ar', 'key')->toArray();
+        $contentsArray = $contents->pluck('value', 'key')->toArray();
 
         return view('index', compact('contentsArray'));
-    }
+    }  public function about() {
+        $contents = GenericContent::all();
+        $contentsArray = $contents->pluck('value', 'key')->toArray();
 
-    public function about() {
-        return view('about');
+        return view('about', compact('contentsArray'));
     }
 
     public function services() {
-        return view('services');
+        $contents = GenericContent::all();
+        $contentsArray = $contents->pluck('value', 'key')->toArray();
+
+        return view('services', compact('contentsArray'));
     }
 
     public function contact() {
-        return view('contact');
+        $contents = GenericContent::all();
+        $contentsArray = $contents->pluck('value', 'key')->toArray();
+
+        return view('contact', compact('contentsArray'));
     }
 
     public function sendContactEmail(Request $request)
@@ -74,6 +81,34 @@ class GenericPageController extends Controller {
 
         return redirect()->back()->with('success', 'msg_sent');
     }
+    
+     public function indexAr() {
+        $contents = GenericContent::all();
+        $contentsArray = $contents->pluck('value_ar', 'key')->toArray();
+        return view('arabic.index', compact('contentsArray'));
+    }  
+    
+    public function aboutAr() {
+    
+        $contents = GenericContent::all();
+        $contentsArray = $contents->pluck('value_ar', 'key')->toArray();
+        return view('arabic.about', compact('contentsArray'));
+    }
+
+    public function servicesAr() {
+        $contents = GenericContent::all();
+        $contentsArray = $contents->pluck('value_ar', 'key')->toArray();
+
+        return view('arabic.services', compact('contentsArray'));
+    }
+
+    public function contactAr() {
+        $contents = GenericContent::all();
+        $contentsArray = $contents->pluck('value_ar', 'key')->toArray();
+
+        return view('arabic.contact', compact('contentsArray'));
+    }
+
 
 
 }

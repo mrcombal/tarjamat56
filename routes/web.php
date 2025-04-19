@@ -18,6 +18,11 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
 Route::get('admin/login', [AdminController::class, 'getLogin'])->name('admin.login');
 Route::post('admin/login', [AdminController::class, 'postLogin'])->name('admin.auth');
 
+Route::get('/ar/contact', [GenericPageController::class, 'contactAr'])->name('website.ar.contact');
+Route::get('/ar/services', [GenericPageController::class, 'servicesAr'])->name('website.ar.services');
+Route::get('/ar/about', [GenericPageController::class, 'aboutAr'])->name('website.ar.about');
+Route::get('/ar', [GenericPageController::class, 'indexAr'])->name('website.ar.index');
+
 Route::get('/contact', [GenericPageController::class, 'contact'])->name('website.contact');
 Route::get('/services', [GenericPageController::class, 'services'])->name('website.services');
 Route::get('/about', [GenericPageController::class, 'about'])->name('website.about');

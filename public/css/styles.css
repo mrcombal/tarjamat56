@@ -79,17 +79,32 @@ main p {
 .hero-section.about .container {
     background: url('../images/key-of-life.svg') bottom right no-repeat;
 }
+.hero-section.about.ar .container {
+    background: url('../images/key-of-life.svg') bottom left no-repeat;
+}
 
 .hero-section.contact .container {
     background: url('../images/two-dots.svg') bottom right no-repeat;
+}
+
+.hero-section.contact.ar .container {
+    background: url('../images/two-dots.svg') bottom left no-repeat;
 }
 
 .hero-section.services .container {
     background: url('../images/services.svg') bottom right no-repeat;
 }
 
+.hero-section.services.ar .container {
+    background: url('../images/services.svg') bottom left no-repeat;
+}
+
 .hero-section.home .container {
     background: url('../images/t-letter-white.svg') bottom right no-repeat;
+}
+
+.hero-section.home .container.ar {
+    background: url('../images/t-letter-white.svg') bottom left no-repeat;
 }
 
 .hero-section.home p {
@@ -187,6 +202,7 @@ p, a, li, .lead {
 
 .home-services .service .service-title {
     font-size: 16px;
+    text-align: center !important;
 }
 
 .home-services .service .service-description {

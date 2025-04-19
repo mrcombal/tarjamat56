@@ -1,13 +1,23 @@
-@extends('master')
+@extends('arabic.master')
+
+@section('css')
+	<style>
+		.hero-section.home a.btn {
+			margin-left: 20px;
+			margin-right: 0;
+		}
+	</style>
+@endsection
+
 @section('content')
-    <section class="hero-section text-white text-left home">
-        <div class="container">
+    <section class="hero-section text-white home" dir="rtl">
+        <div class="container ar">
             <div class="row">
                 <div class="col-md-7">
-                    <h1 class="display-5" style="font-weight: 100; margin-bottom: 20px; margin-top: 30px;">Bridging <span class="fw-bold">cultures</span><br>Empowering <span class="fw-bold">women</span></h1>
-                    <p class="lead" style="font-size: 16px; line-height: 24px;">{{ $contentsArray['hero_home'] ?? '' }}</p>
-                    <a href="{{route('website.services')}}" class="btn">Browse services</a>
-                    <a href="{{route('website.contact')}}" class="btn btn-white">Submit a request</a>
+                    <h1 class="display-5" style="font-weight: 100; margin-bottom: 20px; margin-top: 30px;">نعزز التواصل بين  <span class="fw-bold">الثقافات</span><br>وندعم تمكين <span class="fw-bold">المرأة</span></h1>
+                    <p class="lead" style="font-size: 16px; line-height: 24px; text-align: right;">{{ $contentsArray['hero_home'] ?? '' }}</p>
+                    <a href="{{route('website.services')}}" class="btn">تصفح الخدمات</a>
+                    <a href="{{route('website.contact')}}" class="btn btn-white">طلب عرض سعر</a>
                 </div>
                 <div class="col-md-5">
                 </div>
@@ -18,14 +28,14 @@
     <section class="container py-5 numerical-facts">
         <h2 class="text-center fw-bold" style="font-size: 32px; color: #362E2E; margin-bottom: 50px;">
             <img src="{{asset('images/tarjamat-logo-colored.svg')}}" style="display: block; margin: 0 auto 20px auto;">
-            Numerical Facts
+            إحصائيات وأرقام
         </h2>
         <div class="row">
             <div class="col-md-3">
                 <div class="fact">
                     <div class="circle">
-                        <div class="number"><span id="fact-words">{{ $contentsArray['counter_words'] ?? 'N/A' }}</span>M+</div>
-                        <div class="word">words</div>
+                        <div class="number"><span id="fact-words">14</span>M+</div>
+                        <div class="word">كلمة</div>
                     </div>
                     <div class="description">{{ $contentsArray['counter_words_text'] ?? 'N/A' }}</div>
                 </div>
@@ -33,8 +43,8 @@
             <div class="col-md-3">
                 <div class="fact">
                     <div class="circle">
-                        <div class="number"><span id="fact-years">{{ $contentsArray['counter_years'] ?? 'N/A' }}</span>+</div>
-                        <div class="word">years</div>
+                        <div class="number"><span id="fact-years">17</span>+</div>
+                        <div class="word">سنة</div>
                     </div>
                     <div class="description">{{ $contentsArray['counter_years_text'] ?? 'N/A' }}</div>
                 </div>
@@ -43,7 +53,7 @@
                 <div class="fact">
                     <div class="circle">
                         <div class="number"><span id="fact-languages">4</span>+</div>
-                        <div class="word">languages</div>
+                        <div class="word">لغات</div>
                     </div>
                     <div class="description">{{ $contentsArray['counter_languages_text'] ?? 'N/A' }}</div>
                 </div>
@@ -52,7 +62,7 @@
                 <div class="fact">
                     <div class="circle">
                         <div class="number"><span id="fact-clients">50</span>+</div>
-                        <div class="word">clients</div>
+                        <div class="word">عميل</div>
                     </div>
                     <div class="description">{{ $contentsArray['counter_clients_text'] ?? 'N/A' }}</div>
                 </div>
@@ -60,11 +70,11 @@
         </div>
     </section>
 
-    <section class="home-services">
+    <section class="home-services" dir="rtl">
         <div class="container">
             <h2 class="text-center fw-bold" style="font-size: 32px; color: #362E2E; margin-bottom: 50px;">
                 <img src="{{asset('images/tarjamat-logo-colored.svg')}}" style="display: block; margin: 0 auto 20px auto;">
-                What do we offer?
+                ماذا تقدم ترجمات؟
             </h2>
             <div class="row" style="margin-bottom: 30px;">
                 <div class="col-md-3">
@@ -72,8 +82,8 @@
                         <div class="service-icon">
                             <img src="{{asset('images/icons/translation.svg')}}">
                         </div>
-                        <h3 class="service-title">Professional<br>Translation & Editing</h3>
-                        <p class="service-description text-center">Providing accurate translations and thorough editing to ensure clarity and consistency in every project.</p>
+                        <h3 class="service-title">الترجمة<br>والتحرير باحترافية</h3>
+                        <p class="service-description text-center">نقدّم ترجمات دقيقة وتحريرًا متقنًا لضمان الوضوح والتناسق في كل مشروع.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -81,8 +91,8 @@
                         <div class="service-icon">
                             <img src="{{asset('images/icons/subtitling.svg')}}">
                         </div>
-                        <h3 class="service-title">Subtitling &<br>Transcription Services</h3>
-                        <p class="service-description text-center">Delivering precise subtitling for video content and accurate transcription for audio and video materials.</p>
+                        <h3 class="service-title">خدمات الترجمة النصية<br>والتفريغ السمعي</h3>
+                        <p class="service-description text-center">نقدّم ترجمة نصية دقيقة للمحتوى المرئي وتفريغًا احترافيًا للمواد الصوتية والمرئية.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -90,8 +100,8 @@
                         <div class="service-icon">
                             <img src="{{asset('images/icons/dtp.svg')}}">
                         </div>
-                        <h3 class="service-title">DTP &<br>Interpretation</h3>
-                        <p class="service-description text-center">Offering expert interpretation and multilingual desktop publishing to support global communication needs.</p>
+                        <h3 class="service-title">النشر المكتبي متعدد اللغات<br>وخدمات الترجمة الشفوية</h3>
+                        <p class="service-description text-center">نوفّر ترجمة شفوية احترافية ونشرًا مكتبيًا بلغات متعددة لدعم احتياجات التواصل على مستوى العالم.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -99,12 +109,12 @@
                         <div class="service-icon">
                             <img src="{{asset('images/icons/mtp.svg')}}">
                         </div>
-                        <h3 class="service-title">Machine Translation &<br>Post-Editing Solutions</h3>
-                        <p class="service-description text-center">Combining advanced machine translation with expert post-editing for fast and accurate results.</p>
+                        <h3 class="service-title">الترجمة الآلية<br>وحلول التحرير اللاحق	</h3>
+                        <p class="service-description text-center">نمزج بين تقنيات الترجمة الآلية المتقدمة والتحرير البشري المتخصص للحصول على نتائج سريعة ودقيقة.</p>
                     </div>
                 </div>
             </div>
-            <a href="{{route('website.services')}}" class="btn">Explore our services in details <i class="fa fa-chevron-right" style="padding-left:20px;"></i></a>
+            <a href="{{route('website.services')}}" dir="rtl" class="btn">تصفح الخدمات تفصيليا <i class="fa fa-chevron-left" style="padding-right:20px;"></i></a>
         </div>
     </section>
 @endsection

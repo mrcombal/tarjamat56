@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-7">
                     <h1 style="font-weight: 100; margin-bottom: 20px; margin-top: 30px; text-align:left;">A story of <span class="fw-bold" style="display:block;">vision <span style="font-weight: 100;">&</span> empowerment</span></h1>
-                    <p class="lead" style="font-size: 16px; line-height: 24px;">Our mission, vision, and values all stem from one powerful story–Tarjamat's journey to provide women with equal opportunities in translation, driven by a commitment to quality and inclusivity.</p>
+                    <p class="lead" style="font-size: 16px; line-height: 24px;">{{ $contentsArray['hero_about'] ?? '' }}</p>
                 </div>
                 <div class="col-md-5">
                 </div>
