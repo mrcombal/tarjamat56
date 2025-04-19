@@ -31,23 +31,28 @@ class ServiceController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
+            'name_ar' => 'nullable|string|max:255',
             'description' => 'nullable|string',
+            'description_ar' => 'nullable|string',
             'display_order' => 'required|integer',
-            'icon' => 'required|file|mimes:jpeg,png,jpg,gif,svg|max:2048', // Add file validation
-            'color' => 'required|string|max:7', // Assuming color is a hex code
+            'icon' => 'required|file|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'required|string|in:teal,olive,bronze,crimson,violet,magenta', // Validate the selected photo
+            'color' => 'required|string|max:7',
         ]);
-
-        // Handle the file upload for 'icon'
-    if ($request->hasFile('icon')) {
-        $originalFileName = $request->file('icon')->getClientOriginalName(); // Get the original file name
-        $iconPath = $request->file('icon')->storeAs('icons', $originalFileName, 'public'); // Save file with the original name
-        $validated['icon'] = $iconPath; // Store the path in the database
-    }
-
+    
+        if ($request->hasFile('icon')) {
+            $originalFileName = $request->file('icon')->getClientOriginalName();
+            $iconPath = $request->file('icon')->storeAs('icons', $originalFileName, 'public');
+            $validated['icon'] = $iconPath;
+        }
+    
+        
+    
         Service::create($validated);
-
+    
         return redirect()->route('services.index')->with('success', 'Service created successfully');
     }
+    
 
 
     public function show($id)
@@ -62,22 +67,23 @@ class ServiceController extends Controller
         return view('services.edit', compact('service'));
     }
 
-
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
+            'name_ar' => 'nullable|string|max:255',
             'description' => 'nullable|string',
+            'description_ar' => 'nullable|string',
             'display_order' => 'required|integer',
-            'icon' => 'nullable|file|mimes:jpeg,png,jpg,gif,svg|max:2048', // Update file validation
+            'icon' => 'nullable|file|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'required|string|in:teal,olive,bronze,crimson,violet,magenta', // Validate the selected photo
             'color' => 'required|string|max:7',
         ]);
-
+    
         $service = Service::find($id);
-
-        // Handle file upload
+    
+        // Icon update
         if ($request->hasFile('icon')) {
-            // Delete the old icon if exists
             if ($service->icon) {
                 Storage::delete('public/' . $service->icon);
             }
@@ -85,24 +91,24 @@ class ServiceController extends Controller
             $iconPath = $request->file('icon')->storeAs('icons', $originalFileName, 'public');
             $validated['icon'] = $iconPath;
         }
-
+    
         $service->update($validated);
-
+    
         return redirect()->route('services.index')->with('success', 'Service updated successfully');
     }
-
-
+    
     public function destroy($id)
     {
         $service = Service::find($id);
-
-        // Delete the associated icon file if it exists
+    
         if ($service->icon) {
             Storage::delete('public/' . $service->icon);
         }
 
         $service->delete();
+    
         return redirect()->route('services.index')->with('success', 'Service deleted successfully');
     }
+    
 
 }
