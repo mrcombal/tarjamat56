@@ -1,4 +1,5 @@
 @extends('master')
+
 @section('content')
     <section class="hero-section text-white text-left services">
         <div class="container">
@@ -21,97 +22,27 @@
         <p>Whatever your project needs, explore our range of services and let our team of<br>professionals help bring your words to life with accuracy and care.</p>
 
         <ul class="service-list">
-            <li class="service-item teal">
-                <div class="row">
-                    <div class="col-md-2">
-                        <div class="service-icon">
-                            <img src="{{asset('images/services/translation.svg')}}"/>
+            @foreach ($services as $service)
+                <li class="service-item {{ $service->photo ?? 'default' }}">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="service-icon">
+                                @if ($service->icon)
+                                    <img src="{{ asset('storage/' . $service->icon) }}" alt="{{ $service->name }}" />
+                                @else
+                                    <img src="{{ asset('images/services/default-icon.svg') }}" alt="Default Icon" />
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="service-details">
+                                <h3>{{ $service->name }}</h3>
+                                <p>{{ $service->description }}</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-10">
-                        <div class="service-details">
-                            <h3>Translation</h3>
-                            <p>Accurate and culturally relevant translation of written content between languages, ensuring the message retains its original meaning while adapting to the target culture and context.</p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="service-item olive">
-                <div class="row">
-                    <div class="col-md-2">
-                        <div class="service-icon">
-                            <img src="{{asset('images/services/editing.svg')}}"/>
-                        </div>
-                    </div>
-                    <div class="col-md-10">
-                        <div class="service-details">
-                            <h3>Editing & Proofreading</h3>
-                            <p>Enhancing translated texts by improving clarity, grammar, and flow while ensuring consistency and accuracy across documents. Our team of editors ensures that the final product is polished and free from errors.</p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="service-item bronze">
-                <div class="row">
-                    <div class="col-md-2">
-                        <div class="service-icon">
-                            <img src="{{asset('images/services/subtitling.svg')}}"/>
-                        </div>
-                    </div>
-                    <div class="col-md-10">
-                        <div class="service-details">
-                            <h3>Subtitling & Transcription</h3>
-                            <p>Creating subtitles for visual content and transcribing audio/video files into written format. This includes language localization and technical accuracy to match tone, timing, and context.</p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="service-item crimson">
-                <div class="row">
-                    <div class="col-md-2">
-                        <div class="service-icon">
-                            <img src="{{asset('images/services/interpretation.svg')}}"/>
-                        </div>
-                    </div>
-                    <div class="col-md-10">
-                        <div class="service-details">
-                            <h3>Interpretation</h3>
-                            <p>Accurate and culturally relevant translation of written content between languages, ensuring the message retains its original meaning while adapting to the target culture and context.</p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="service-item violet">
-                <div class="row">
-                    <div class="col-md-2">
-                        <div class="service-icon">
-                            <img src="{{asset('images/services/dtp.svg')}}"/>
-                        </div>
-                    </div>
-                    <div class="col-md-10">
-                        <div class="service-details">
-                            <h3>Multilingual DTP (Desktop Publishing)</h3>
-                            <p>Designing and formatting translated documents in various languages to ensure they maintain their professional appearance across different formats and platforms.</p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="service-item magenta">
-                <div class="row">
-                    <div class="col-md-2">
-                        <div class="service-icon">
-                            <img src="{{asset('images/services/mtp.svg')}}"/>
-                        </div>
-                    </div>
-                    <div class="col-md-10">
-                        <div class="service-details">
-                            <h3>Machine Translation Post Editing</h3>
-                            <p>Optimizing machine-generated translations by human editors, ensuring the highest level of accuracy, fluency, and cultural appropriateness for the final product.</p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
+                </li>
+            @endforeach
         </ul>
     </section>
 @endsection

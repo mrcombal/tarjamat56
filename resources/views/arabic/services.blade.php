@@ -21,6 +21,27 @@
         <p>مهما كانت احتياجات مشروعك، استكشف خدماتنا المتنوعة ودَع فريقنا المحترف يساعدك على إحياء كلماتك بدقة واهتمام.</p>
 
         <ul class="service-list">
+            @foreach ($services as $service)
+                <li class="service-item {{ $service->photo ?? 'default' }}">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="service-icon">
+                                @if ($service->icon)
+                                    <img src="{{ asset('storage/' . $service->icon) }}" alt="{{ $service->name_ar }}" />
+                                @else
+                                    <img src="{{ asset('images/services/default-icon.svg') }}" alt="Default Icon" />
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="service-details">
+                                <h3>{{ $service->name_ar }}</h3>
+                                <p>{{ $service->description_ar }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            @endforeach
             <li class="service-item teal">
                 <div class="row">
                     <div class="col-md-2">

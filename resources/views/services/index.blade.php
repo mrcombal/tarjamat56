@@ -1,10 +1,10 @@
 @extends('admin.master')
 
 @section('content')
-   
+
     <div class="container">
         <h1>Services</h1>
-        <a href="{{ route('services.create') }}" class="btn btn-primary">Create New Service</a>
+        <a href="{{ route('services.create') }}" class="btn btn-primary mb-3">Create New Service</a>
 
         @if (session('success'))
             <div class="alert alert-success">
@@ -12,14 +12,17 @@
             </div>
         @endif
 
-        <table class="table">
+        <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Description</th>
+                    <th>Name (EN)</th>
+                    <th>Name (AR)</th>
+                    <th>Description (EN)</th>
+                    <th>Description (AR)</th>
                     <th>Display Order</th>
                     <th>Icon</th>
-                    <th>Color</th>
+                    <th>Background Photo</th>
+                    {{-- <th>Color</th> --}}
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -27,16 +30,22 @@
                 @foreach ($services as $service)
                     <tr>
                         <td>{{ $service->name }}</td>
+                        <td>{{ $service->name_ar }}</td>
                         <td>{{ $service->description }}</td>
+                        <td>{{ $service->description_ar }}</td>
                         <td>{{ $service->display_order }}</td>
                         <td>
                             @if ($service->icon)
-                                <img src="{{ asset('storage/' . $service->icon) }}" alt="{{ $service->name }}" width="50">
+                                <img src="{{ asset('storage/' . $service->icon) }}" alt="Icon" width="50">
                             @else
                                 No icon
                             @endif
                         </td>
-                        <td>{{ $service->color }}</td>
+                        <td>
+                            </strong> {{ ucfirst($service->photo) }}</p>
+
+                        </td>
+                        {{-- <td>{{ $service->color }}</td> --}}
                         <td>
                             <a href="{{ route('services.show', $service->id) }}" class="btn btn-info btn-sm">Show</a>
                             <a href="{{ route('services.edit', $service->id) }}" class="btn btn-warning btn-sm">Edit</a>
@@ -51,4 +60,5 @@
             </tbody>
         </table>
     </div>
+
 @endsection
