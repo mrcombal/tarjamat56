@@ -24,6 +24,12 @@
  		.service, .service-title, p {
  			line-height: normal !important;
  		}
+ 		.hero-section p.lead {
+ 			font-weight: 300;
+		}
+		.hero-section .display-5 {
+			font-size: 2.5rem;
+		}
 
     </style>
     @yield('css')

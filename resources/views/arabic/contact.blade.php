@@ -4,11 +4,11 @@
     <section class="hero-section text-white text-left contact ar" dir="rtl">
         <div class="container">
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <h1 class="display-5" style="font-weight: 100; margin-bottom: 20px; margin-top: 30px;">دعنا <span class="fw-bold">نساعدك</span>.<br>نحن دائما على بعد <span class="fw-bold">رسالة</span> واحدة.</h1>
                     <p class="lead" style="font-size: 16px; line-height: 24px; text-align: right;">{{ $contentsArray['hero_contact'] ?? '' }}</p>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                 </div>
             </div>
         </div>
