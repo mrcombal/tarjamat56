@@ -16,8 +16,8 @@
                 <div class="col-md-8">
                     <h1 class="display-5" style="font-weight: 100; margin-bottom: 20px; margin-top: 30px;">نعزز التواصل بين  <span class="fw-bold">الثقافات</span><br>وندعم تمكين <span class="fw-bold">المرأة</span></h1>
                     <p class="lead" style="font-size: 16px; line-height: 24px; text-align: right;">{{ $contentsArray['hero_home'] ?? '' }}</p>
-                    <a href="{{route('website.services')}}" class="btn">تصفح الخدمات</a>
-                    <a href="{{route('website.contact')}}" class="btn btn-white">طلب عرض سعر</a>
+                    <a href="{{route('website.ar.services')}}" class="btn">تصفح الخدمات</a>
+                    <a href="{{route('website.ar.contact')}}" class="btn btn-white">طلب عرض سعر</a>
                 </div>
                 <div class="col-md-4">
                 </div>
