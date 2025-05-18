@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\GenericContent;
 use App\Mail\ContactUsEmail;
+use App\Service;
 use Illuminate\Http\Request;
 use App\Services\SendGridMailService;
 
@@ -33,7 +34,8 @@ class GenericPageController extends Controller {
         $contents = GenericContent::all();
         $contentsArray = $contents->pluck('value', 'key')->toArray();
 
-        return view('services', compact('contentsArray'));
+        $services = Service::all();
+        return view('services', compact('services','contentsArray'));
     }
 
     public function contact() {
@@ -98,8 +100,9 @@ class GenericPageController extends Controller {
     public function servicesAr() {
         $contents = GenericContent::all();
         $contentsArray = $contents->pluck('value_ar', 'key')->toArray();
+        $services = Service::all();
 
-        return view('arabic.services', compact('contentsArray'));
+        return view('arabic.services', compact('services','contentsArray'));
     }
 
     public function contactAr() {
