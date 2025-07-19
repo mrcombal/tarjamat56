@@ -57,27 +57,21 @@
 
 
             <div class="form-group">
-                <label for="photo">Background Photo</label>
-                <select name="photo" id="photo" class="form-control" required>
-                    <option value="teal" {{ old('photo') == 'teal' ? 'selected' : '' }}>Teal</option>
-                    <option value="olive" {{ old('photo') == 'olive' ? 'selected' : '' }}>Olive</option>
-                    <option value="bronze" {{ old('photo') == 'bronze' ? 'selected' : '' }}>Bronze</option>
-                    <option value="crimson" {{ old('photo') == 'crimson' ? 'selected' : '' }}>Crimson</option>
-                    <option value="violet" {{ old('photo') == 'violet' ? 'selected' : '' }}>Violet</option>
-                    <option value="magenta" {{ old('photo') == 'magenta' ? 'selected' : '' }}>Magenta</option>
-                </select>
-                @if ($errors->has('photo'))
-                    <div class="text-danger">{{ $errors->first('photo') }}</div>
-                @endif
-            </div>
-
-            {{-- <div class="form-group">
                 <label for="color">Color</label>
-                <input type="color" class="form-control" id="color" name="color" value="{{ old('color') }}" required>
+                <select name="color" id="color" class="form-control" required>
+                    <option value="teal" {{ old('color') == 'teal' ? 'selected' : '' }}>Teal</option>
+                    <option value="olive" {{ old('color') == 'olive' ? 'selected' : '' }}>Olive</option>
+                    <option value="bronze" {{ old('color') == 'bronze' ? 'selected' : '' }}>Bronze</option>
+                    <option value="crimson" {{ old('color') == 'crimson' ? 'selected' : '' }}>Crimson</option>
+                    <option value="violet" {{ old('color') == 'violet' ? 'selected' : '' }}>Violet</option>
+                    <option value="magenta" {{ old('color') == 'magenta' ? 'selected' : '' }}>Magenta</option>
+                </select>
                 @if ($errors->has('color'))
                     <div class="text-danger">{{ $errors->first('color') }}</div>
                 @endif
-            </div> --}}
+            </div>
+
+
 
             <button type="submit" class="btn btn-primary">Create</button>
         </form>

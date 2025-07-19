@@ -38,30 +38,25 @@
                 <label for="icon">Icon</label>
                 <input type="file" class="form-control" id="icon" name="icon">
                 @if ($service->icon)
-                    <img src="{{ asset('storage/' . $service->icon) }}" alt="Icon" width="100" class="mt-2">
+                    <img src="{{ asset($service->icon) }}" alt="Icon" width="100" class="mt-2">
                 @endif
             </div>
 
 
             <div class="form-group">
-                <label for="photo">Background Photo</label>
-                <select name="photo" id="photo" class="form-control" required>
-                    <option value="teal" {{ $service->photo == 'teal' ? 'selected' : '' }}>Teal</option>
-                    <option value="olive" {{ $service->photo == 'olive' ? 'selected' : '' }}>Olive</option>
-                    <option value="bronze" {{ $service->photo == 'bronze' ? 'selected' : '' }}>Bronze</option>
-                    <option value="crimson" {{ $service->photo == 'crimson' ? 'selected' : '' }}>Crimson</option>
-                    <option value="violet" {{ $service->photo == 'violet' ? 'selected' : '' }}>Violet</option>
-                    <option value="magenta" {{ $service->photo == 'magenta' ? 'selected' : '' }}>Magenta</option>
+                <label for="color">Background Photo</label>
+                <select name="color" id="color" class="form-control" required>
+                    <option value="teal" {{ $service->color == 'teal' ? 'selected' : '' }}>Teal</option>
+                    <option value="olive" {{ $service->color == 'olive' ? 'selected' : '' }}>Olive</option>
+                    <option value="bronze" {{ $service->color == 'bronze' ? 'selected' : '' }}>Bronze</option>
+                    <option value="crimson" {{ $service->color == 'crimson' ? 'selected' : '' }}>Crimson</option>
+                    <option value="violet" {{ $service->color == 'violet' ? 'selected' : '' }}>Violet</option>
+                    <option value="magenta" {{ $service->color == 'magenta' ? 'selected' : '' }}>Magenta</option>
                 </select>
                 @if ($errors->has('photo'))
-                    <div class="text-danger">{{ $errors->first('photo') }}</div>
+                    <div class="text-danger">{{ $errors->first('color') }}</div>
                 @endif
             </div>
-
-            {{-- <div class="form-group">
-                <label for="color">Color</label>
-                <input type="color" class="form-control" id="color" name="color" value="{{ old('color', $service->color) }}" required>
-            </div> --}}
 
             <button type="submit" class="btn btn-primary">Update</button>
         </form>

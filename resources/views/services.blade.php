@@ -23,12 +23,12 @@
 
         <ul class="service-list">
             @foreach ($services as $service)
-                <li class="service-item {{ $service->photo ?? 'default' }}">
+                <li class="service-item {{ $service->color }}">
                     <div class="row">
                         <div class="col-md-2">
                             <div class="service-icon">
                                 @if ($service->icon)
-                                    <img src="{{ asset('storage/' . $service->icon) }}" alt="{{ $service->name }}" />
+                                    <img src="{{ asset($service->icon) }}" alt="{{ $service->name }}" />
                                 @else
                                     <img src="{{ asset('images/services/default-icon.svg') }}" alt="Default Icon" />
                                 @endif

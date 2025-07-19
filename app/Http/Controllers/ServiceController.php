@@ -29,6 +29,8 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+    
+    
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'name_ar' => 'nullable|string|max:255',
@@ -36,16 +38,17 @@ class ServiceController extends Controller
             'description_ar' => 'nullable|string',
             'display_order' => 'required|integer',
             'icon' => 'required|file|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'photo' => 'required|string|in:teal,olive,bronze,crimson,violet,magenta', // Validate the selected photo
-            'color' => 'required|string|max:7',
+            'color' => 'required|string|in:teal,olive,bronze,crimson,violet,magenta', // Validate the selected photo
         ]);
     
-        if ($request->hasFile('icon')) {
-            $originalFileName = $request->file('icon')->getClientOriginalName();
-            $iconPath = $request->file('icon')->storeAs('icons', $originalFileName, 'public');
-            $validated['icon'] = $iconPath;
-        }
-    
+       if ($request->hasFile('icon')) {
+     	   $file = $request->file('icon');
+	        $extension = $file->getClientOriginalExtension(); // should be svg
+    	    $filename = time() . '.' . $extension;
+        	$destinationPath = public_path('icons'); // this is /public/icons
+	        $file->move($destinationPath, $filename);
+    	    $validated['icon'] = 'icons/' . $filename; // save the relative path
+	    }
         
     
         Service::create($validated);
@@ -76,20 +79,22 @@ class ServiceController extends Controller
             'description_ar' => 'nullable|string',
             'display_order' => 'required|integer',
             'icon' => 'nullable|file|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'photo' => 'required|string|in:teal,olive,bronze,crimson,violet,magenta', // Validate the selected photo
-            'color' => 'required|string|max:7',
+            'color' => 'required|string|in:teal,olive,bronze,crimson,violet,magenta', // Validate the selected photo
         ]);
     
         $service = Service::find($id);
     
-        // Icon update
+
         if ($request->hasFile('icon')) {
             if ($service->icon) {
                 Storage::delete('public/' . $service->icon);
             }
-            $originalFileName = $request->file('icon')->getClientOriginalName();
-            $iconPath = $request->file('icon')->storeAs('icons', $originalFileName, 'public');
-            $validated['icon'] = $iconPath;
+            $file = $request->file('icon');
+	        $extension = $file->getClientOriginalExtension(); // should be svg
+    	    $filename = time() . '.' . $extension;
+        	$destinationPath = public_path('icons'); // this is /public/icons
+	        $file->move($destinationPath, $filename);
+    	    $validated['icon'] = 'icons/' . $filename; // save the relative path
         }
     
         $service->update($validated);
