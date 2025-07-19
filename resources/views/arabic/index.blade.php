@@ -114,7 +114,7 @@
                     </div>
                 </div>
             </div>
-            <a href="{{route('website.services')}}" dir="rtl" class="btn">تصفح الخدمات تفصيليا <i class="fa fa-chevron-left" style="padding-right:20px;"></i></a>
+            <a href="{{route('website.ar.services')}}" dir="rtl" class="btn">تصفح الخدمات تفصيليا <i class="fa fa-chevron-left" style="padding-right:20px;"></i></a>
         </div>
     </section>
 @endsection
